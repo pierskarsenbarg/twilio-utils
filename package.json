@@ -1,6 +1,6 @@
 {
   "name": "my-webpack-project",
-  "version": "${VERSION}",
+  "version": "0.0.7",
   "description": "Library containing useful Twilio libraries",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
