@@ -1,0 +1,35 @@
+{
+  "name": "my-webpack-project",
+  "version": "${VERSION}",
+  "description": "Library containing useful Twilio libraries",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode=production --node-env=production",
+    "build:dev": "webpack --mode=development",
+    "build:prod": "webpack --mode=production --node-env=production",
+    "watch": "webpack --watch",
+    "clean": "rm -rf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/pierskarsenbarg/twilio-utils"
+  },
+  "author": "Piers Karsenbarg",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.0.6",
+    "@webpack-cli/generators": "^0.1.9",
+    "ts-loader": "^9.3.1",
+    "typescript": "^4.7.4",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "twilio": "^3.79.0"
+  }
+}
