@@ -25,7 +25,7 @@ jobs:
         echo $RELEASE_VERSION
         echo ${{ env.RELEASE_VERSION }}
     - name: Set version
-      run: sed -i.bak -e "s/\$${{env.RELEASE_VERSION}}/${{ VERSION }}/g" ./package.json
+      run: npm version ${{env.RELEASE_VERSION}} --no-git-tag-version
     - name: cat package.json
       run: cat package.json
     - name: NPM Install
