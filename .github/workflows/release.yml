@@ -6,6 +6,7 @@ on:
     - '!v*.*.*-**'
 jobs:
   package:
+    name: package
     runs-on: ubuntu-latest
     steps:
       - name: Setup Node
