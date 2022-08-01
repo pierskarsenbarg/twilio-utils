@@ -26,6 +26,8 @@ jobs:
         echo ${{ env.RELEASE_VERSION }}
     - name: Set version
       run: sed -i.bak -e "s/\$${{ env.RELEASE_VERSION }}/${{ env.RELEASE_VERSION }}/g" ./package.json
+    - name: cat package.json
+      run: cat package.json
     - name: NPM Install
       run: npm ci
     - name: build webpack
