@@ -24,6 +24,8 @@ jobs:
       run: |
         echo $RELEASE_VERSION
         echo ${{ env.RELEASE_VERSION }}
+    - name: Set version
+      run: sed -i.bak -e "s/\$${{ env.RELEASE_VERSION }}/${{ env.RELEASE_VERSION }}/g" ./package.json
     - name: NPM Install
       run: npm ci
     - name: build webpack
@@ -32,8 +34,6 @@ jobs:
       run: cp package*.json ./dist
     - name: Copy README
       run: cp README.md ./dist
-    - name: Set version
-      run: sed -i.bak -e "s/\$${{ env.RELEASE_VERSION }}/${{ env.RELEASE_VERSION }}/g" ./dist/package.json
     - name: Compress SDK folder
       run: tar -zcf dist/utils.tar.gz -C ./dist .
     - name: Upload artifacts
