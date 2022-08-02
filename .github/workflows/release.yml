@@ -31,7 +31,7 @@ jobs:
     - name: Copy README
       run: cp README.md ./dist
     - name: Compress SDK folder
-      run: tar -zcf dist/utils.tar.gz -C ./dist .
+      run: tar -zcf dist/package.tar.gz -C dist .
     - name: Upload artifacts
       uses: actions/upload-artifact@v2
       with:
