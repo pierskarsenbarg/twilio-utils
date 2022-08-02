@@ -1,5 +1,5 @@
 {
-  "name": "my-webpack-project",
+  "name": "@pierskarsenbarg/twilio-utils",
   "version": "${VERSION}",
   "description": "Library containing useful Twilio libraries",
   "main": "dist/index.js",
