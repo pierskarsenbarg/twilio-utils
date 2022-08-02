@@ -42,4 +42,26 @@ jobs:
       matrix:
         nodeversion:
         - 14.x
+  publish:
+    name: publish package
+    steps:
+      - name: Install NodeJS
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{matrix.nodeversion}}
+          registry-url: https://registry.npmjs.org 
+      - name: Download package
+        uses: actions/download-artifact@v2
+        with:
+          name: utils.tar.gz
+          path: ${{ github.workspace}}/
+      - name: Unzip tar
+        run: tar -zxf ${{github.workspace}}/utils.tar.gz -C ${{github.workspace}}/dist
+      - name: Install Node packages
+        run: npm ci
+    strategy:
+      fail-fast: true
+      matrix:
+        nodeversion:
+        - 14.x
     
