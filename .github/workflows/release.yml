@@ -59,8 +59,10 @@ jobs:
           path: ${{ github.workspace}}/
       - name: Unzip tar
         run: tar -zxf ${{github.workspace}}/utils.tar.gz
-      - name: cat package.json
-        run: cat package.json
+      - name: Publish NPM package
+        run: npm publish --access public
+        env: 
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     strategy:
       fail-fast: true
       matrix:
