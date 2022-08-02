@@ -45,6 +45,7 @@ jobs:
   publish:
     name: publish package
     runs-on: ubuntu-latest
+    needs: package
     steps:
       - name: Install NodeJS
         uses: actions/setup-node@v2
