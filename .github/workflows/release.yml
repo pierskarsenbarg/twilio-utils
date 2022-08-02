@@ -31,12 +31,12 @@ jobs:
     - name: Copy README
       run: cp README.md ./dist
     - name: Compress SDK folder
-      run: tar -zcf dist/package.tar.gz -C dist .
-    # - name: Upload artifacts
-    #   uses: actions/upload-artifact@v2
-    #   with:
-    #     name: utils.tar.gz
-    #     path: ${{ github.workspace}}/dist/utils.tar.gz
+      run: tar -zcf ./utils.tar.gz -C dist .
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: utils.tar.gz
+        path: ${{ github.workspace}}/utils.tar.gz
     strategy:
       fail-fast: true
       matrix:
