@@ -58,7 +58,7 @@ jobs:
           name: utils.tar.gz
           path: ${{ github.workspace}}/
       - name: Unzip tar
-        run: tar -zxf ${{github.workspace}}/utils.tar.gz -C ${{github.workspace}}/dist
+        run: tar -zxf ${{github.workspace}}/utils.tar.gz
       - name: Install Node packages
         run: npm ci
     strategy:
